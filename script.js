@@ -10,12 +10,12 @@ console.log(pageviews)
 
 function month() {
 
-range.addEventListener('input', function(){
+range.addEventListener('change', ()=>{
     
     if (range.value == 0) {
         bill.innerText = "$8.00";
         pageviews.innerText = "10K PAGEVIEWS"
-        // range.slyle.backgroundColor = "linear-radient(to right, #7aeadf 0%, #ecf0fb 0% 100%)";
+        range.slyle.backgroundColor = "linear-radient(to right, #7aeadf 0%, #ecf0fb 0% 100%)";
     
     } 
     if (range.value == 25) {
@@ -45,7 +45,7 @@ range.addEventListener('input', function(){
 }
 
 function year() {
-    range.addEventListener('input', ()=>{
+    range.addEventListener('change', ()=>{
         
         if (range.value == 0) {
             bill.innerText = "$72.00";
@@ -91,7 +91,8 @@ button.addEventListener("click", ()=>{
     bill.innerText = "$144.00"
     pageviews.innerText = "100K PAGEVIEWS"
     active = 1
-    } else if (active = 1) {
+    year()
+    } else if (active == 1) {
         button.style.backgroundColor = "#cfd8ef";
         btnCircle.style.left = "100px"
         mounthYear.innerText = "/ month"
@@ -99,14 +100,9 @@ button.addEventListener("click", ()=>{
         bill.innerText = "$16.00"
         pageviews.innerText = "100K PAGEVIEWS"
         active = 0
-    }
-
-
-    if (active == 0){
         month()
-    } else {
-        year()
     }
+
     })
 
 
